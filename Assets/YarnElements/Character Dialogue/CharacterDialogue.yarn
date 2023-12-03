@@ -1,0 +1,174 @@
+﻿title: NPC-Alien
+tags:
+---
+<<declare $travelForest = true>>
+<<declare $playGame = false>>
+<<declare $isAngry = true>>
+<<declare $hasSpokenToAlien = false>>
+<<declare $hasSpokenToMaya = false>>
+
+<<if $hasSpokenToAlien is false>>
+    Hey there, I'm sad. Do you want to play a game with me? #line:07b0cbc 
+    -> Yes #line:07db95b 
+        <<set $playGame = true>>
+    -> No   #line:0b411a3 
+
+
+    <<if $playGame is true>>
+
+        Welcome dear traveler. Where do you wish to go? #line:0c736c4 
+        -> Travel to the Forest of Whispers #line:0de97c3 
+        -> Travel to the Caverns of Shadows #line:0c1f916 
+            <<set $travelForest = false>>
+            Beware of the dark caverns, you never know what you'll find. #line:01c69ec 
+            <<jump CavernOfShadows>>
+
+        <<set $hasSpokenToAlien = true>>
+        <<if $travelForest is true>>
+            Beware of the Forest of Whispers, the trees whisper secrets that may be deceptive. #line:0512561 
+            <<jump ForestOfWhispers>>
+        <<endif>>
+
+    <<else>>
+    // <<if $isAngry is true>>
+    // <<endif>>
+    <<set $hasSpokenToAlien = true>>
+    Goodbye. Thanks for nothing.#line:024e31c 
+    <<endif>>
+<<else>>
+No more games. Leave me be. Go speak to Maya or Alex, I hear there's a feud between them. #line:061c69a 
+<<endif>>
+===
+
+title: ForestOfWhispers
+tags:
+---
+There is a creature in the forest. Do you want to follow your instincts or use it as a guardian? #line:00b7fe8 
+-> Use as guardian #line:09e29ab 
+-> Follow your instincts #line:0c4553d 
+===
+
+title: CavernOfShadows
+tags:
+---
+// laughs
+The caverns are no place for a mere kid. Grow up and see me later. #line:0d32e3c 
+===
+
+title: Maya
+tags:
+---
+
+<<declare $doingOkay = false>>
+<<declare $hearAboutDay = false>>
+
+<<if !$hasSpokenToMaya>>
+
+    Heyo, I'm Maya. You doing okay? #line:0ea757c 
+    -> Yes #line:031a333 
+    <<set $doingOkay = true>>
+    -> No   #line:0de1607 
+
+
+    <<if $doingOkay is true>>
+
+        Oh great. I'm having the worst day. Do you wanna hear about it? #line:0045ed4 
+        -> No, shut up. #line:0e03956
+            Oh that's so mean.  #line:0875f9f 
+            Please let me know if you see a young boy walking around looking lost. #line:0d9e086 
+        -> Yeah sure #line:04e7587 
+            <<set $hearAboutDay = true>>
+                My mom is so mad at me because I lost my younger brother. #line:0235f9e 
+                I left Alex, my boyfriend in charge of my brother and he went out with his friends and lost him. #line:05683eb 
+                Please help me find him. I don't ever want to see Alex ever. #line:07ec047 
+                Thanks for listening #line:09b1b4c 
+
+        <<if $hearAboutDay is false>>
+            You're so rude. You're just like Alex. #line:0d747e3
+            Who's Alex you say? Alex is my boyfriend. #line:0a0550b 
+            We're currently fighting. He went out with his friends last night and lost my younger brother. #line:0d6a668 
+            My mom is angry, I don't know what to do. Please help me find him. #line:0575991 
+        <<endif>>
+    <<else>>
+        Tell me about it. My boyfriend Alex just lost my younger brother after he went out last night. #line:0167f5d 
+        Please let me know if you see a lost kid around. #line:09cad40 
+    <<endif>>
+    
+<<else>>
+    Have you seen a little boy? Please help me find him. #line:064ec49 
+<<endif>>
+===
+
+title: Alex
+tags:
+---
+
+<<declare $hasSpokenToAlex = false>>
+<<declare $hasSeenKid = false>>
+<<declare $laughAtAlex = false>>
+<<declare $noOfTimesSpokenToAlex = 0>>
+<<declare $rightLocation = false>>
+<<declare $childFound = false>>
+
+<<if !$hasSpokenToAlex>>
+    <<set $hasSpokenToAlex = true>>
+    Alex here. Dude, I'm in so much trouble. #line:0d74633 
+    Have you seen a kid around here that looks lost?   #line:0d6f398 
+    ->Yes  #line:0149333 
+        <<set $hasSeenKid = true>>
+    ->No    #line:0034354 
+
+
+    <<if $hasSeenKid is true>>
+
+        Oh great. Where've you seen him?   #line:027fff4 
+        -> Location 1  #line:039f2a1 
+        -> Location 2   #line:026a3d3 
+            <<set $rightLocation = true>>
+        -> Location 3  #line:0b64b64 
+
+        Thanks so much man. I'll go have a look. #line:070cb52 
+        <<set $noOfTimesSpokenToAlex +=1 >>
+    <<else>>
+        <<set $noOfTimesSpokenToAlex +=1 >>
+        Nooooo!! I'm so dumb.  #line:036ea67 
+        My girlfriend Maya left me his kid brother to babysit. I went out with my friends last night and lost him. I've been looking for him ever since. #line:06d826b 
+        -> Hahaha. How dumb can you be? Hahaha #line:0488c90 
+            <<set $laughAtAlex = true>>
+        -> I'll let you know if I see anything #line:052fc58 
+
+        <<if $laughAtAlex>>
+            I probably deserve that. Please let me know if you find him. #line:0d622dc 
+        <<endif>>
+    <<endif>>
+<<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$hasSeenKid>>
+    Have you found him? Where could he be?
+        -> Location 1  
+        -> Location 2   
+            <<set $rightLocation = true>>
+        -> Location 3 
+    <<set $hasSeenKid = true>> 
+    I'll go check. Thank you. 
+<<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$rightLocation>>
+    You sent me out on a wild goose chase. I didn't find him there. Now where is he? #line:0ba83dd 
+        -> Location 1  #line:0e375f8 
+        -> Location 2   #line:0219210 
+            <<set $rightLocation = true>>
+        -> Location 3 #line:0abbee2 
+        I'll go check again. You better not be playing games. #line:0332c75 
+<<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && $rightLocation>>
+      Oh thanks man. Just returned him to his people. Maya's still fussing but that'll pass. #line:07e42a2 
+      I owe you one. #line:078b544 
+      <<set $childFound = true>>     
+<<else>>
+    <<if !$childFound>>
+        Have you seen a little boy? Please help me find him. #line:0b9e805 
+    <<else>>
+        I owe you one. We should meet up later for drinks. No kids allowed - wink wink. #line:0600504 
+    <<endif>>
+<<endif>>
+
+
+===
+
+
