@@ -66,7 +66,7 @@ tags:
 
     Heyo, I'm Maya. You doing okay? #line:0ea757c 
     -> Yes #line:031a333 
-    <<set $doingOkay = true>>
+        <<set $doingOkay = true>>
     -> No   #line:0de1607 
 
 
@@ -74,24 +74,19 @@ tags:
 
         Oh great. I'm having the worst day. Do you wanna hear about it? #line:0045ed4 
         -> No, shut up. #line:0e03956
-            Oh that's so mean.  #line:0875f9f 
-            Please let me know if you see a young boy walking around looking lost. #line:0d9e086 
+            // Oh that's so mean.  #line:0875f9f 
+            // Please let me know if you see a young boy walking around looking lost. #line:0d9e086 
         -> Yeah sure #line:04e7587 
             <<set $hearAboutDay = true>>
-                My mom is so mad at me because I lost my younger brother. #line:0235f9e 
-                I left Alex, my boyfriend in charge of my brother and he went out with his friends and lost him. #line:05683eb 
-                Please help me find him. I don't ever want to see Alex ever. #line:07ec047 
-                Thanks for listening #line:09b1b4c 
+                My mom is so mad at me because I lost my younger brother. I left Alex, my boyfriend in charge of my brother and he went out with his friends and lost him. #line:05683eb 
+                Please help me find him. I don't ever want to see Alex ever...Thanks for listening #line:09b1b4c 
 
         <<if $hearAboutDay is false>>
-            You're so rude. You're just like Alex. #line:0d747e3
-            Who's Alex you say? Alex is my boyfriend. #line:0a0550b 
-            We're currently fighting. He went out with his friends last night and lost my younger brother. #line:0d6a668 
-            My mom is angry, I don't know what to do. Please help me find him. #line:0575991 
+            You're so rude! You're just like Alex! Who's Alex you say? Alex is my boyfriend. #line:0a0550b 
+            We're currently fighting. He went out with his friends last night and lost my younger brother. My mom is angry, I don't know what to do. Please help me find him. #line:0575991 
         <<endif>>
     <<else>>
-        Tell me about it. My boyfriend Alex just lost my younger brother after he went out last night. #line:0167f5d 
-        Please let me know if you see a lost kid around. #line:09cad40 
+        Tell me about it. My boyfriend Alex just lost my younger brother after he went out last night. Please let me know if you see a lost kid around. #line:09cad40 
     <<endif>>
     
 <<else>>
@@ -112,8 +107,7 @@ tags:
 
 <<if !$hasSpokenToAlex>>
     <<set $hasSpokenToAlex = true>>
-    Alex here. Dude, I'm in so much trouble. #line:0d74633 
-    Have you seen a kid around here that looks lost?   #line:0d6f398 
+    Alex here. Dude, I'm in so much trouble. Have you seen a kid around here that looks lost?   #line:0d6f398 
     ->Yes  #line:0149333 
         <<set $hasSeenKid = true>>
     ->No    #line:0034354 
@@ -131,8 +125,7 @@ tags:
         <<set $noOfTimesSpokenToAlex +=1 >>
     <<else>>
         <<set $noOfTimesSpokenToAlex +=1 >>
-        Nooooo!! I'm so dumb.  #line:036ea67 
-        My girlfriend Maya left me his kid brother to babysit. I went out with my friends last night and lost him. I've been looking for him ever since. #line:06d826b 
+        Nooooo!! I'm so dumb. My girlfriend Maya left me his kid brother to babysit. I went out with my friends last night and lost him. I've been looking for him ever since. #line:06d826b 
         -> Hahaha. How dumb can you be? Hahaha #line:0488c90 
             <<set $laughAtAlex = true>>
         -> I'll let you know if I see anything #line:052fc58 
@@ -142,13 +135,13 @@ tags:
         <<endif>>
     <<endif>>
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$hasSeenKid>>
-    Have you found him? Where could he be?
-        -> Location 1  
-        -> Location 2   
+    Have you found him? Where could he be? #line:040dbd2 
+        -> Location 1   #line:0cca484 
+        -> Location 2    #line:04b66d3 
             <<set $rightLocation = true>>
-        -> Location 3 
+        -> Location 3  #line:0e353a8 
     <<set $hasSeenKid = true>> 
-    I'll go check. Thank you. 
+    I'll go check. Thank you.  #line:06a9b41 
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$rightLocation>>
     You sent me out on a wild goose chase. I didn't find him there. Now where is he? #line:0ba83dd 
         -> Location 1  #line:0e375f8 
@@ -157,8 +150,7 @@ tags:
         -> Location 3 #line:0abbee2 
         I'll go check again. You better not be playing games. #line:0332c75 
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && $rightLocation>>
-      Oh thanks man. Just returned him to his people. Maya's still fussing but that'll pass. #line:07e42a2 
-      I owe you one. #line:078b544 
+      Ho!Ho!Ho! Thanks man. Just returned him to his people. Maya's still fussing but that'll pass. I owe you one. #line:078b544 
       <<set $childFound = true>>     
 <<else>>
     <<if !$childFound>>
