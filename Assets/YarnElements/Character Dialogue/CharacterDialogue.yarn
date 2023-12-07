@@ -163,4 +163,21 @@ tags:
 
 ===
 
+title: Vendor
+tags:
+---
+<<declare $randomNumber = 1>>
+// <<set $randomNumber to random_range(0,2)>>
+
+<<if $randomNumber == 1>>
+    Hello there. Would you like to purchase some vegetables? #line:0ff005d 
+<<elseif $randomNumber == 2>>
+    Pumpkins, carrots, watermelons all fresh for you today. Come get one!! #line:05bce2b 
+<<else>>
+    Buy some vegetables now, you look unhealthy. #line:064d2f5 
+<<endif>>
+
+<<set $randomNumber to dice(3)>>
+===
+
 
