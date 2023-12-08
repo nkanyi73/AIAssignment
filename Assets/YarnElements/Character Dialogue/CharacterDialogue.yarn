@@ -58,7 +58,7 @@ The caverns are no place for a mere kid. Grow up and see me later. #line:0d32e3c
 title: Maya
 tags:
 ---
-
+<<Set_Audio_To_NPC_One LipSyncController>>
 <<declare $doingOkay = false>>
 <<declare $hearAboutDay = false>>
 
@@ -97,7 +97,7 @@ tags:
 title: Alex
 tags:
 ---
-
+<<Set_Audio_To_NPC_Two LipSyncController>>
 <<declare $hasSpokenToAlex = false>>
 <<declare $hasSeenKid = false>>
 <<declare $laughAtAlex = false>>

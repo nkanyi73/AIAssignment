@@ -1,59 +1,44 @@
-# Unity-Meta-Quest-Template
-Unity template project optimised for Meta Quest devices.
-Current Project Version Unity 2022.3.2f
+# Project Name: [Your Project Name]
 
-Changes from default Unity project with Android build target:  
+## Overview
 
-Packages:  
-Installed XR Plug-in Management. Targets Quest, Quest 2, Quest Pro  
-Installed OpenXR Plugin  
-Installed Oculus XR Plugin  
-Installed XR Interaction Toolkit version 2.4.0
-Installed XR Hands 1.2.1
-Installed Meta OpenXR Feature 0.1.1
-URP Samples imported (includes useful blob shadow shader)  
+Welcome to VRQuest, an immersive virtual reality experience where you step into the shoes of a character on a bustling street. Your mission is to help two NPC characters find a lost child. Engage in meaningful interactions with the NPCs, explore the vibrant street, and uncover the narrative in this captivating VR adventure.
 
-Quality Settings:  
-Custom Quality profiles  for Quest, Quest 2, Quest Pro, Quest 3. (Default Quest 2)  
-Vsync disabled  
-Anisotropic Textures set to Per Texture.  
-Shadowmask Mode set to Shadowmask  
-LOD Bias set to 0.7  
-Skin Weights set to 2 Bones  
+## Features
 
-Player Settings:  
-Auto Graphics API disabled, set to OpenGL ES 3.0  
-Texture Compression format set to ATSC  
-Minimum API Level set to Android 10.0 (API Level 29)  
-Lightmap encoding set to High Quality  
-HDR Cubemap encoding set to High Quality  
-Use Incremental GC enabled 
-Scripting Backend set to IL2CPP  
-IL2CPP Code generation set to Faster (smaller) builds *Change this to Faster runtime for release build  
-Target Architecture set to Arm64  
-Active Input Handling set to Both  
-Optimize Mesh Data enabled   
+### Virtual Reality Adventure
 
+Embark on a virtual reality journey along a lively street, where you play a crucial role in reuniting a lost child with their guardians.
 
-Physics Settings:  
-Reuse Collision Callbacks enabled  
-Default Max Angular Speed set to 7 
-Enabled Improved Patch Friction 
+### NPC Interaction and Lip Syncing
 
-Time Settings:  
-Maximum Allowed Timestep set to 0.0138 (for 72 Hz)  
+Interact with a diverse cast of NPCs, each contributing to the immersive atmosphere. Our advanced dialogue system provides a range of choices, influencing the storyline. The NPCs, including the two main characters on the quest, feature lip syncing for a realistic and engaging experience.
 
-URP Renderer Settings:  
-Shadows – Transparent Receive Shadows disabled   
+### Environmental Exploration
 
-URP Pipeline asset settings for Quest 2: (minor differences for Quest 1 and Quest Pro)  
-Disable Terrain Holes  
-Main Light – Cast Shadows disabled  
-Additional Lights set to Per Pixel  
+Discover the intricacies of the virtual street, filled with interactive elements and points of interest. Uncover the narrative by engaging with the environment and the characters populating it.
 
-Notes:  
-The project is set up to have to realtime shadows and no additional lights.
-Adjust URP shadow settings according to the needs of your game/app.   
-For release builds enable Low Overhead Mode under Oculus XR Plug-in Management options.  
+## How to Use
 
-Cornell Box model taken form Sketchfab - Cornell Box- Original - Download Free 3D model by t-ly (@t-ly) https://sketchfab.com/3d-models/cornell-box-original-0d18de8d108c4c9cab1a4405698cc6b6
+1. **Installation**: [Include instructions on how to install and run your VR application.]
+2. **Controls**: [Provide a comprehensive guide to the controls within your VR experience.]
+3. **Gameplay**: [Explain the objective of the game, how to interact with NPCs, and the role of the player in the story.]
+4. **Lip Syncing**: [Detail how lip syncing enhances the realism of NPC interactions.]
+
+## Video Showcase
+
+To get a visual preview of the functionality and immersion the VR application offers, check out our [Video Showcase]. Witness the realistic lip syncing, dynamic NPC interactions, and the vivid virtual environment.
+
+[Include Link to Video Showcase]
+
+## Credits and Acknowledgments
+
+We extend our appreciation to [Acknowledged Individuals or Organizations] for their valuable contributions to the development of [Your Project Name].
+
+## Feedback and Contributions
+
+Your feedback is crucial to improving our VR experience. If you have suggestions, encounter any issues, or want to contribute, please visit our [GitHub Repository] and open an issue or submit a pull request.
+
+Thank you for being a part of [Your Project Name]! Immerse yourself in the virtual world, where your actions shape the narrative and every interaction brings you closer to the resolution.
+
+[Your Contact Information]

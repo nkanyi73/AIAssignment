@@ -47,11 +47,9 @@ public class RandomNavMeshPosition : MonoBehaviour
         }
         else
         {
-            //Vector3 currentPosition = transform.position;
-            //float randomZ = UnityEngine.Random.Range(-1f, 1f);
 
             Vector3 randomDirection = UnityEngine.Random.insideUnitSphere * wanderDistance;
-            //Vector3 randomDirection = new Vector3(currentPosition.x, currentPosition.y, randomZ) * wanderDistance;
+            
 
             randomDirection += transform.position;
 
