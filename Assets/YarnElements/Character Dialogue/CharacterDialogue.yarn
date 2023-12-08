@@ -89,8 +89,13 @@ tags:
         Tell me about it. My boyfriend Alex just lost my younger brother after he went out last night. Please let me know if you see a lost kid around. #line:09cad40 
     <<endif>>
     
+    <<set $hasSpokenToMaya = true>>
 <<else>>
-    Have you seen a little boy? Please help me find him. #line:064ec49 
+    <<if !$childFound>>
+        Have you seen a little boy? Please help me find him. #line:064ec49 
+    <<else>>
+        Thanks for all your help. Alex just told me that you helped him find my brother. I'm still mad at him but I'm glad that Jacob's fine. #line:0d2b7c3 
+    <<endif>>
 <<endif>>
 ===
 
@@ -116,10 +121,10 @@ tags:
     <<if $hasSeenKid is true>>
 
         Oh great. Where've you seen him?   #line:027fff4 
-        -> Location 1  #line:039f2a1 
-        -> Location 2   #line:026a3d3 
+        -> By the Pickup Truck  #line:039f2a1 
+        -> At the end of the street   #line:026a3d3 
             <<set $rightLocation = true>>
-        -> Location 3  #line:0b64b64 
+        -> With one of the street merchants  #line:0b64b64 
 
         Thanks so much man. I'll go have a look. #line:070cb52 
         <<set $noOfTimesSpokenToAlex +=1 >>
@@ -136,18 +141,18 @@ tags:
     <<endif>>
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$hasSeenKid>>
     Have you found him? Where could he be? #line:040dbd2 
-        -> Location 1   #line:0cca484 
-        -> Location 2    #line:04b66d3 
+        -> By the Pickup Truck   #line:0cca484 
+        -> At the end of the street    #line:04b66d3 
             <<set $rightLocation = true>>
-        -> Location 3  #line:0e353a8 
+        -> With one of the street merchants  #line:0e353a8 
     <<set $hasSeenKid = true>> 
     I'll go check. Thank you.  #line:06a9b41 
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && !$rightLocation>>
     You sent me out on a wild goose chase. I didn't find him there. Now where is he? #line:0ba83dd 
-        -> Location 1  #line:0e375f8 
-        -> Location 2   #line:0219210 
+        -> By the Pickup Truck  #line:0e375f8 
+        -> At the end of the street   #line:0219210 
             <<set $rightLocation = true>>
-        -> Location 3 #line:0abbee2 
+        -> With one of the street merchants #line:0abbee2 
         I'll go check again. You better not be playing games. #line:0332c75 
 <<elseif $hasSpokenToAlex && $noOfTimesSpokenToAlex > 0 && $rightLocation>>
       Ho!Ho!Ho! Thanks man. Just returned him to his people. Maya's still fussing but that'll pass. I owe you one. #line:078b544 

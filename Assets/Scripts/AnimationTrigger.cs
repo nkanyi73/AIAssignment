@@ -70,7 +70,7 @@ public class AnimationTrigger : MonoBehaviour
             float degrees = radians * Mathf.Rad2Deg;
 
             float str = Mathf.Min(canvasTurnSpeed * Time.deltaTime, 1);
-            Quaternion targetRotation = Quaternion.Euler(0, degrees, 0);
+            Quaternion targetRotation = Quaternion.Euler(0, degrees - 90, 0);
             dialogueCanvas.transform.rotation = Quaternion.Slerp(dialogueCanvas.transform.rotation, targetRotation, str);
         }
     }
