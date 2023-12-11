@@ -20,25 +20,34 @@ Discover the intricacies of the virtual street, filled with interactive elements
 
 ## How to Use
 
-1. **Installation**: [Include instructions on how to install and run your VR application.]
-2. **Controls**: [Provide a comprehensive guide to the controls within your VR experience.]
-3. **Gameplay**: [Explain the objective of the game, how to interact with NPCs, and the role of the player in the story.]
-4. **Lip Syncing**: [Detail how lip syncing enhances the realism of NPC interactions.]
+1. **Installation**
+    - Head over to the releases section and download the apk file.
+    - Using the Meta Quest Developer Hub or SideQuest, install the application. 
+2. **Gameplay**
+
+    Your mission is to help find a lost child by digging out information from other characters in the game. Each character has a variety of dialogue options with different outcomes. Explore the various options in this immersive experience.
+
 
 ## Video Showcase
 
-To get a visual preview of the functionality and immersion the VR application offers, check out our [Video Showcase]. Witness the realistic lip syncing, dynamic NPC interactions, and the vivid virtual environment.
+To get a visual preview of the functionality and immersion the VR application offers, check out the [video here](https://youtu.be/PzBgLovvqGg). Witness the realistic lip syncing, dynamic NPC interactions, and the vivid virtual environment.
 
-[Include Link to Video Showcase]
 
-## Credits and Acknowledgments
+## Resources
 
-We extend our appreciation to [Acknowledged Individuals or Organizations] for their valuable contributions to the development of [Your Project Name].
+- All animations were obtained from [Mixamo.](www.mixamo.com)
+
+3D Models and characters used:
+- [Vietnam’s Old Town](https://sketchfab.com/3d-models/vietnams-old-town-c1251dd5edfb4f73ab6ac98ca3e3a188)
+- [Chicago Buildings](https://sketchfab.com/3d-models/chicago-buildings-950b3d8a998c41ecb06e6ba85da3e1f6)
+- [Lost Medieval Market](https://sketchfab.com/3d-models/lost-treasure-medieval-market-974d439accdb4e93a55aa196e5619a92)
+- [GMC Sierra Work Truck](https://sketchfab.com/3d-models/gmc-sierra-work-truck-1fae2b50fbe14d2c98296a2560a38399)
+- [Microsoft RocketBox Characters](https://github.com/microsoft/Microsoft-Rocketbox)
+
 
 ## Feedback and Contributions
 
-Your feedback is crucial to improving our VR experience. If you have suggestions, encounter any issues, or want to contribute, please visit our [GitHub Repository] and open an issue or submit a pull request.
+To contribute, create an issue and a pull request.
 
-Thank you for being a part of [Your Project Name]! Immerse yourself in the virtual world, where your actions shape the narrative and every interaction brings you closer to the resolution.
+Thank you for being a part of VRQuest! Immerse yourself in the virtual world, where your actions shape the narrative and every interaction brings you closer to the resolution.
 
-[Your Contact Information]
